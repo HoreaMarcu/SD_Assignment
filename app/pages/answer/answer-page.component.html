@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Answer Page</title>
+  <link rel="stylesheet" type="text/css" href="answer-page.component.scss">
+</head>
+<body>
+<div class="question">
+  <h2>{{ question.title }}</h2>
+  <p>{{ question.text_content }}</p>
+  <div class="metadata">
+    <span>Posted by {{ question.authorCNP }}</span>
+    <span>on {{ question.creationDate }}</span>
+  </div>
+  <div class="image">
+    <img src="{{ question.picture }}" alt="{{ question.title }}">
+  </div>
+</div>
+
+<div class="answers">
+  <h3>Answers:</h3>
+  <div class="answer" *ngFor="let answer of answers">
+    <div class="metadata">
+      <span>Posted by {{ answer.authorCNP }}</span>
+      <span> on {{ answer.creationDate }}</span>
+    </div>
+    <div class="answer-content">
+      <div class="image">
+        <img src="{{ answer.picture }}" alt="{{ answer.text_content }}">
+      </div>
+      <div class="text">
+        <p>{{ answer.text_content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

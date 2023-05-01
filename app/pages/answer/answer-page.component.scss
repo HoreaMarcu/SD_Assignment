@@ -1,0 +1,40 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.question, .answer {
+  margin-bottom: 40px;
+}
+
+.question h2 {
+  margin-bottom: 10px;
+}
+
+.question p:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answer p:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.answer p:last-child {
+  margin-top: 10px;
+}
+.answer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image {
+  margin-right: 10px;
+}
+
+.text {
+  flex-grow: 1;
+}

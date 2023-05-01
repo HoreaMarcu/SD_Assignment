@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum Posts</title>
+  <link rel="stylesheet" type="text/css" href="question-page.component.scss">
+</head>
+<body>
+<div class="post" routerLink="/answers" *ngFor="let question of questions">
+  <h2>{{ question.title }}</h2>
+  <p>{{ question.text }}</p>
+  <div class="metadata">
+    <span>Posted by {{ question.author }}</span>
+    <span>on {{ question.date }}</span>
+    <span>in {{ question.tag }}</span>
+  </div>
+  <div class="image">
+    <img src="{{ question.image }}" alt="{{ question.title }}">
+  </div>
+</div>
+</body>
+</html>
