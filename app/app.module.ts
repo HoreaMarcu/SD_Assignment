@@ -13,6 +13,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {HomePageComponent} from "./pages/home/home-page.component";
 import {QuestionPageComponent} from "./pages/question/question-page.component";
 import {AnswerPageComponent} from "./pages/answer/answer-page.component";
+import {SignupPageComponent} from "./pages/signUp/signup-page.component";
+import {AskQuestionPageComponent} from "./pages/question/askQuestion";
+import {AddAnswerPageComponent} from "./pages/answer/addAnswer";
 
 
 
@@ -20,7 +23,10 @@ const appRoute: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'profile', component: UserPageComponent},
   {path: 'questions', component: QuestionPageComponent},
-  {path: 'answers', component: AnswerPageComponent}
+  {path: 'answers', component: AnswerPageComponent},
+  {path: 'signup', component: SignupPageComponent},
+  {path: 'askQ', component: AskQuestionPageComponent},
+  {path: 'addAnswer', component: AddAnswerPageComponent}
 ]
 @NgModule({
   declarations: [
@@ -29,7 +35,10 @@ const appRoute: Routes = [
     UserPageComponent,
     HomePageComponent,
     QuestionPageComponent,
-    AnswerPageComponent
+    AnswerPageComponent,
+    SignupPageComponent,
+    AskQuestionPageComponent,
+    AddAnswerPageComponent
   ],
   imports: [
     BrowserModule,

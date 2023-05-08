@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="question-page.component.scss">
 </head>
 <body>
+<button class="buttonProfile" a routerLink="/askQ">Ask question</button>
 <div class="post" routerLink="/answers" *ngFor="let question of questions">
   <h2>{{ question.title }}</h2>
   <p>{{ question.text }}</p>
