@@ -1,0 +1,65 @@
+.main-container {
+  box-sizing: border-box;
+  height: 95%;
+  width: 100%;
+  background: #ffffff;
+  font-size: 22px;
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  overflow: hidden;
+
+  .main-body {
+    box-sizing: border-box;
+    height: calc(100vh - 2rem);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    .nav {
+      width: 16rem;
+      display: flex;
+      flex-direction: column;
+      //border-right: 2px solid black;
+      height: 95%;
+    }
+
+    .content {
+      width: calc(100vw - 16rem);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: relative;
+    }
+
+    .content:before {
+      content: "";
+      position: fixed; /* Make the border fixed */
+      top: 0;
+      bottom: 0;
+      left: 16rem; /* Set the left value to match the width of the nav */
+      border-left: 2px solid black; /* Set the border style */
+    }
+
+    .buttonProfile{
+      background-color: white;
+      border: 2px solid black;
+      color: green;
+      padding: 5px 10px;
+      text-align: center;
+      display: inline-block;
+      font-size: 20px;
+      margin: 10px 30px;
+      cursor: pointer;
+    }
+  }
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+

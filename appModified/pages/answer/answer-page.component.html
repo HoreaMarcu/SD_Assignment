@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Answer Page</title>
+  <link rel="stylesheet" type="text/css" href="answer-page.component.scss">
+</head>
+<body>
+<div class="question">
+  <h2>{{ actualQ?.title }}</h2>
+  <p>{{ actualQ?.text }}</p>
+  <div class="metadata">
+    <span>Posted by {{ actualQ?.author }}</span>
+    <span>on {{ actualQ?.date }}</span>
+  </div>
+  <div class="image">
+    <img src="{{ actualQ?.image }}" alt="{{ actualQ?.title }}">
+  </div>
+</div>
+<button class="buttonProfile" a routerLink="/addAnswer">Add answer</button>
+<div class="answers">
+  <h3>Answers:</h3>
+  <div class="answer" *ngFor="let answer of answers">
+    <div class="metadata">
+      <span>Posted by {{ answer.author }}</span>
+      <span> on {{ answer.date }}</span>
+    </div>
+    <div class="answer-content">
+      <div class="image">
+        <img src="{{ answer.image }}" alt="{{ answer.text }}">
+      </div>
+      <div class="text">
+        <p>{{ answer.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

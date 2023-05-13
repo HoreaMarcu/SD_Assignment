@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="left">
+    <img src = "https://i.stack.imgur.com/YQu5k.png" alt="user" width="100">
+    <h4>Name</h4>
+    <p id = "name">User</p>
+  </div>
+  <div class="right">
+
+    <div class="info">
+      <h3>Information</h3>
+      <div class="info_data">
+        <div class = "data">
+          <h4>Email</h4>
+          <p id = "email">ToBeChanged</p>
+        </div>
+        <div class = "data">
+          <h4>Phone</h4>
+          <p id = "phone">phoneNr</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="posts">
+      <h3>Posts</h3>
+      <div class="posts_data">
+        <div class = "data">
+          <h4>Recent</h4>
+          <p>Recent post link</p>
+        </div>
+        <div class = "data">
+          <h4>Most liked post</h4>
+          <p>most liked post link</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Compiled TypeScript File
+      const root = document.getElementById('email');
+      function changeText() {
+        root.innerHTML = 'The text is changed!'
+      }
+      changeText();
+    </script>
+
+  </div>
+</div>

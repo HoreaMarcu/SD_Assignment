@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum Posts</title>
+  <link rel="stylesheet" type="text/css" href="question-page.component.scss">
+</head>
+<body>
+<button class="buttonProfile" a routerLink="/askQ">Ask question</button>
+<div class="post" routerLink="/answers" *ngFor="let question of questions">
+  <a [routerLink]="['/question', question.id]">{{ question.title }}</a>
+  <p>{{ question.text }}</p>
+  <div class="metadata">
+    <span>Posted by {{ question.author }}</span>
+    <span>on {{ question.date }}</span>
+<!--    <span>in {{ question.tag }}</span>-->
+  </div>
+  <div class="image">
+    <img src="{{ question.image }}" alt="{{ question.title }}">
+  </div>
+</div>
+</body>
+</html>
