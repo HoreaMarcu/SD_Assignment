@@ -15,13 +15,25 @@ public class Vote {
     @Column(name="content_id")
     private int content_id;
 
+    @Column(name = "vote_type")
+    private int vote_type;
+
     public Vote() {
     }
 
-    public Vote(int id, int user_id, int content_id) {
+    public Vote(int id, int user_id, int content_id, int vote_type) {
         this.id = id;
         this.user_id = user_id;
         this.content_id = content_id;
+        this.vote_type = vote_type;
+    }
+
+    public int getVote_type() {
+        return vote_type;
+    }
+
+    public void setVote_type(int vote_type) {
+        this.vote_type = vote_type;
     }
 
     public int getId() {

@@ -21,7 +21,19 @@ public class AnswerService {
     @Autowired
     ContentService contentService;
 
-    public List<Answer> retrieveAnswers(){return (List<Answer>) answerRepository.findAll();}
+    public List<Answer> retrieveAnswers(){
+        List<Answer> a = (List<Answer>) answerRepository.findAll();
+        for(int i = 0; i < a.size(); i++){
+            for(int  j = i + 1; j < a.size(); j++){
+                if(a.get(i).getLikes() - a.get(i).getDislikes() < (a.get(j).getLikes() - a.get(j).getDislikes())){
+                    Answer aux = a.get(i);
+                    a.set(i,a.get(j));
+                    a.set(j,aux);
+                }
+            }
+        }
+        return a;
+    }
 
     public AnswerDTO retrieveAnswerById(Long id){
         Optional<Answer> answer = answerRepository.findById(id);

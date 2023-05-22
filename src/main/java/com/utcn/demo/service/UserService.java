@@ -25,7 +25,7 @@ public class UserService {
         Optional<User> user = userRepository.findById(cnp);
 
         if(user.isPresent()) {
-            return new UserDTO(user.get().getFirstName(), user.get().getLastName());
+            return new UserDTO(user.get().getFirstName(), user.get().getLastName(), user.get().getEmail());
         } else {
             return null;
         }

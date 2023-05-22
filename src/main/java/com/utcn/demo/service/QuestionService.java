@@ -52,6 +52,7 @@ public class QuestionService {
     }
 
     public Question saveQuestion(Question question){
+        System.out.println(question.getContent_id() + " " + question.getTitle() + question.getText_content());
         contentService.saveContent(question);
         return questionRepository.save(question);
     }

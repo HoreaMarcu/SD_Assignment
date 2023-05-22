@@ -4,12 +4,15 @@ import com.utcn.demo.dto.AnswerDTO;
 import com.utcn.demo.entity.Answer;
 import com.utcn.demo.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/answers")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AnswerController {
     @Autowired
     AnswerService answerService;
@@ -28,7 +31,10 @@ public class AnswerController {
 
     @DeleteMapping("/deleteById/{id}")
     @ResponseBody
-    public String deleteById(@PathVariable Long id){return answerService.deleteById(id);}
+    public ResponseEntity<String> deleteById(@PathVariable Long id) {
+        answerService.deleteById(id);
+        return ResponseEntity.ok("{\"message\": \"Success\"}");
+    }
 
     @PostMapping("/insertAnswer")
     @ResponseBody
@@ -37,6 +43,7 @@ public class AnswerController {
     @PutMapping("/updateAnswer")
     @ResponseBody
     public Answer updateAnswer(@RequestBody Answer answer){
+        System.out.println(answer.getContent_id());
         if(answerService.retrieveAnswerById(answer.getContent_id())!=null){
             return answerService.saveAnswer(answer);
         }
