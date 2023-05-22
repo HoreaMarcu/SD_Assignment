@@ -6,8 +6,9 @@
 </head>
 <body>
 <button class="buttonProfile" a routerLink="/askQ">Ask question</button>
+<input type="text" class="searchBar" placeholder="Search..." (keypress)="handleKeyPress($event)">
 <div class="post" routerLink="/answers" *ngFor="let question of questions">
-  <h2>{{ question.title }}</h2>
+  <a [routerLink]="['/question', question.id]">{{ question.title }}</a>
   <p>{{ question.text }}</p>
   <div class="metadata">
     <span>Posted by {{ question.author }}</span>
@@ -17,6 +18,7 @@
   <div class="image">
     <img src="{{ question.image }}" alt="{{ question.title }}">
   </div>
+  <button class="updateButton" [routerLink]="['/updateQ', question.id]" *ngIf="shouldShowUpdateButton(question.author)">Update</button>
 </div>
 </body>
 </html>

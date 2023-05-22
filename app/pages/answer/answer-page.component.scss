@@ -49,3 +49,46 @@
   margin: 10px 30px;
   cursor: pointer;
 }
+
+.like-dislike {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.like-dislike button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.like-dislike button:hover {
+  color: #000;
+}
+
+.like-dislike button:focus {
+  outline: none;
+}
+
+.like-dislike button:active {
+  transform: translateY(1px);
+}
+
+.like-dislike button.active {
+  color: #f00;
+}
+.updateButton{
+  background-color: white;
+  border: 2px solid black;
+  color: green;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px 30px;
+  cursor: pointer;
+}
+

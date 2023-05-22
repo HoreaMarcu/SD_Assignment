@@ -1,86 +1,90 @@
 export class Answer{
-  private _contentId: number;
-  private _question_id: number;
-  private _authorCNP: number;
-  private _text_content: string;
-  private _creationDate: string;
-  private _picture: string;
-  private _likes: number;
-  private _dislikes: number;
+  private content_id: number;
+  private question_id: number;
+  private author_cnp: number;
+  private text_content: string;
+  private creation_date_time: Date;
+  private picture: string;
+  private likes: number;
+  private dislikes: number;
 
 
-  constructor(contentId: number, question_id: number, authorCNP: number, text_content: string, creationDate: string, picture: string, likes: number, dislikes: number) {
-    this._contentId = contentId;
-    this._question_id = question_id;
-    this._authorCNP = authorCNP;
-    this._text_content = text_content;
-    this._creationDate = creationDate;
-    this._picture = picture;
-    this._likes = likes;
-    this._dislikes = dislikes;
+  constructor(contentId: number, question_id: number, authorCNP: number, text_content: string, creationDate: Date, picture: string, likes: number, dislikes: number) {
+    this.content_id = contentId;
+    this.question_id = question_id;
+    this.author_cnp = authorCNP;
+    this.text_content = text_content;
+    this.creation_date_time = creationDate;
+    this.picture = picture;
+    this.likes = likes;
+    this.dislikes = dislikes;
   }
 
-  get contentId(): number {
-    return this._contentId;
+  get contentId1(): number {
+    return this.content_id;
   }
 
-  set contentId(value: number) {
-    this._contentId = value;
+  set contentId2(value: number) {
+    this.content_id = value;
   }
 
-  get question_id(): number {
-    return this._question_id;
+  get question_id1(): number {
+    return this.question_id;
   }
 
-  set question_id(value: number) {
-    this._question_id = value;
+  set question_id1(value: number) {
+    this.question_id = value;
   }
 
-  get authorCNP(): number {
-    return this._authorCNP;
+  get authorCNP1(): number {
+    return this.author_cnp;
   }
 
-  set authorCNP(value: number) {
-    this._authorCNP = value;
+  set authorCNP1(value: number) {
+    this.author_cnp = value;
   }
 
-  get text_content(): string {
-    return this._text_content;
+  get text_content1(): string {
+    return this.text_content;
   }
 
-  set text_content(value: string) {
-    this._text_content = value;
+  set text_content1(value: string) {
+    this.text_content = value;
   }
 
-  get creationDate(): string {
-    return this._creationDate;
+  get creationDate1(): Date {
+    return this.creation_date_time;
   }
 
-  set creationDate(value: string) {
-    this._creationDate = value;
+  set creationDate1(value: Date) {
+    this.creation_date_time = value;
   }
 
-  get picture(): string {
-    return this._picture;
+  get picture1(): string {
+    return this.picture;
   }
 
-  set picture(value: string) {
-    this._picture = value;
+  set picture1(value: string) {
+    this.picture = value;
   }
 
-  get likes(): number {
-    return this._likes;
+  get likes1(): number {
+    return this.likes;
   }
 
-  set likes(value: number) {
-    this._likes = value;
+  set likes2(value: number) {
+    this.likes = value;
   }
 
-  get dislikes(): number {
-    return this._dislikes;
+  get dislikes1(): number {
+    return this.dislikes;
   }
 
-  set dislikes(value: number) {
-    this._dislikes = value;
+  set dislikes2(value: number) {
+    this.dislikes = value;
   }
+  public incrementLikes() {
+    this.likes++;
+  }
+
 }

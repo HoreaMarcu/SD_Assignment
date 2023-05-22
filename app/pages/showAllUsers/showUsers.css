@@ -1,0 +1,42 @@
+#user-list {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.user {
+  margin-bottom: 10px;
+}
+
+.user-id {
+  font-weight: bold;
+}
+
+.user-name {
+  margin-left: 10px;
+}
+/* Assuming you have a class for the button named 'ban-button' */
+.ban-button {
+  background-color: #ff0000; /* Red background color */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 8px 16px; /* Add some padding */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.ban-button:hover {
+  background-color: #dd0000; /* Darker red background color on hover */
+}
+
+.unban-button {
+  background-color: green;
+  color: #ffffff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 8px 16px; /* Add some padding */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.unban-button:hover {
+  background-color: darkgreen; /* Darker red background color on hover */
+}

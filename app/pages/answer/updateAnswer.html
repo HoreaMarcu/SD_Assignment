@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Answer</title>
+  <link rel="stylesheet" href="updateAnswer.css" />
+</head>
+<body>
+<header>
+  <h1>Update Answer</h1>
+</header>
+<main>
+  <form>
+    <div class="form-group">
+      <label for="answer-text">Answer:</label>
+      <textarea id="answer-text" name="answer-text" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="answer-image">Image:</label>
+      <input type="file" id="answer-image" name="answer-image" accept="image/*" />
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Update Answer" id="updateButton">
+      <input type="submit" value="Delete Answer" id="deleteButton">
+    </div>
+  </form>
+</main>
+</body>
+</html>

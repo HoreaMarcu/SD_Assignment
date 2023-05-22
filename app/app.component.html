@@ -1,22 +1,15 @@
 <div class="main-container">
-  <app-header [title]="'___Stack Overflow___'">
-  </app-header>
+  <app-header [title]="'___Stack Overflow___'"></app-header>
   <div class="main-body">
     <div class="nav">
-<!--      this it the navigation, where buttons for navigating can be added-->
-      <button class="buttonProfile" a routerLink="">Home</button>
-      <button class="buttonProfile" a routerLink="/signup">Sign up</button>
-      <button class="buttonProfile" a routerLink="/profile">View Profile</button>
-      <button class="buttonProfile" a routerLink="/questions">View Questions</button>
-
+      <button class="buttonProfile" (click)="logout()">Log Out</button>
+      <button class="buttonProfile" routerLink="/signup">Sign up</button>
+      <button class="buttonProfile" routerLink="/profile">View Profile</button>
+      <button class="buttonProfile" (click)="onClick()">View Questions</button>
+      <button class="buttonProfile" (click)="onClick1()" >View Users</button>
     </div>
     <div class="content">
-<!--      Usage of the same component can be seen here-->
-<!--      <app-user></app-user>-->
-<!--      <app-user [title]="'Update user'" [user]="user"></app-user>-->
-
-    <router-outlet></router-outlet>
-
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

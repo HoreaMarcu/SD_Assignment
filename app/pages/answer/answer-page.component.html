@@ -6,32 +6,49 @@
 </head>
 <body>
 <div class="question">
-  <h2>{{ question.title }}</h2>
-  <p>{{ question.text_content }}</p>
+  <h2>{{ actualQ?.title }}</h2>
+  <p>{{ actualQ?.text }}</p>
   <div class="metadata">
-    <span>Posted by {{ question.authorCNP }}</span>
-    <span>on {{ question.creationDate }}</span>
+    <span>Posted by {{ actualQ?.author }}</span>
+    <span>(score: {{ userScore[actualQ.id] }}) on {{ actualQ?.date }}</span>
   </div>
   <div class="image">
-    <img src="{{ question.picture }}" alt="{{ question.title }}">
+    <img src="{{ actualQ?.image }}" alt="{{ actualQ?.title }}">
+  </div>
+  <div class="like-dislike">
+    <button (click)="likeQuestion()" #likeButton>Like</button>
+    <span>{{ likes }}</span>
+    <button (click)="dislikeQuestion()" #dislikeButton>Dislike</button>
+    <span>{{ dislikes }}</span>
+    <span> Total: {{ likes - dislikes }}</span>
   </div>
 </div>
-<button class="buttonProfile" a routerLink="/addAnswer">Add answer</button>
+<button class="buttonProfile" a routerLink="/addAnswer">
+  <a [routerLink]="['/addAnswer', actualQ?.id]">Add answer</a>
+</button>
 <div class="answers">
   <h3>Answers:</h3>
   <div class="answer" *ngFor="let answer of answers">
     <div class="metadata">
-      <span>Posted by {{ answer.authorCNP }}</span>
-      <span> on {{ answer.creationDate }}</span>
+      <span>Posted by {{ answer.author }}</span>
+      <span>(score: {{ userScore[answer.content_id] }})  on {{ answer.date }}</span>
     </div>
     <div class="answer-content">
       <div class="image">
-        <img src="{{ answer.picture }}" alt="{{ answer.text_content }}">
+        <img src="{{ answer.image }}" alt="{{ answer.text }}">
       </div>
       <div class="text">
-        <p>{{ answer.text_content }}</p>
+        <p>{{ answer.text }}</p>
       </div>
     </div>
+    <div class="like-dislike">
+      <button (click)="likeAns(answer.content_id)" #likeButton2>Like</button>
+      <span>{{ answer.likes }}</span>
+      <button (click)="dislikeAns(answer.content_id)" #dislikeButton2>Dislike</button>
+      <span>{{ answer.dislikes }}</span>
+      <span>Total : {{ answer.likes - answer.dislikes  }} </span>
+    </div>
+    <button class="updateButton" [routerLink]="['/updateA', answer.content_id]" *ngIf="shouldShowUpdateButton(answer.author)">Update</button>
   </div>
 </div>
 </body>

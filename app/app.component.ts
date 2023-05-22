@@ -4,6 +4,9 @@ import {User} from "./pages/user/user";
 import {Question} from "./pages/question/question";
 import {Answer} from "./pages/answer/answer";
 import {UserPageComponent} from "./pages/user/user-page.component";
+import {Router} from "@angular/router";
+import {AuthService} from "./pages/authService";
+import {Global} from "./pages/global";
 
 @Component({
   selector: 'app-root',
@@ -12,32 +15,46 @@ import {UserPageComponent} from "./pages/user/user-page.component";
 })
 export class AppComponent implements OnInit{
   title = 'angular-example';
-  user: any = {
-    name:"Pop Ion",
-    username: "poppyion@gmail.com",
-    password: "testpwd",
-    address: "dummy  Address"
-  };
-
-  users : any[] = []
-  constructor(private http: HttpClient) {
+  activeUser: any = new User(0,"","","","","","");
+  constructor(private http: HttpClient,private authService: AuthService, private router: Router) {
   }
 
+  logout(): void {
+    // Clear the activeUser in the AuthService
+    this.authService.activeUser = null;
 
+    // Clear the activeUser in the Global object
+    Global.activeUser = null;
 
-  ngOnInit() {
-    this.getUsers().subscribe((data:any) => {
-      console.log(data)
-      this.users = data
-    })
-    //this.ex.email = this.ex.user.email;
-
-    //debugger
-    //this.change();
+    // Navigate to the login page or any other desired page
+    this.router.navigate(['']);
+    console.log("active user: ")
+    console.log(Global.activeUser)
   }
-  // change(){
-  //   let ex = new UserPageComponent(this.users[0]);
+  onClick(): void{
+    if(Global.activeUser){
+      this.router.navigate(['/questions']);
+    }
+  }
+  onClick1(): void{
+    if(Global.activeUser){
+      // @ts-ignore
+      if(Global.activeUser.userId == 4) {
+        this.router.navigate(['/showUsers']);
+      }
+    }
+  }
+  // shouldShowUsersButton() : boolean{
+  //   if(Global.activeUser != null) {
+  //     // @ts-ignore
+  //     if (Global.activeUser.userId == 4) return true;
+  //     else return false;
+  //   }
+  //   return  true;
   // }
+  ngOnInit(): void {
+    this.activeUser = Global.activeUser;
+  }
   getUsers(){
     return this.http.get<any>('http://localhost:8080/users/getAll')
   }

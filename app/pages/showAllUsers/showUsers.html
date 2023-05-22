@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profiles</title>
+  <link rel="stylesheet" type="text/css" href="showUsers.css">
+</head>
+<body>
+<div class="user-profiles">
+  <span>All users:</span>
+  <div *ngFor="let user of users" class="user-profile">
+    <span>ID: {{ user.id }} </span>
+    <span>Name: {{ user.name }}   </span>
+    <button (click)="banUser(user.id)" class="ban-button">Ban</button>
+    <button (click)="unbanUser(user.id)" class="unban-button">Unban</button>
+  </div>
+</div>
+</body>
+</html>

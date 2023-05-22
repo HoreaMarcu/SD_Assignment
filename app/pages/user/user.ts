@@ -1,75 +1,75 @@
 export class User{
 
-  private _userId : number;
-  private _lastName : string;
-  private _firstname: string;
-  private _email : string;
-  private _password: string;
-  private _phoneNr: string;
-  private _profilePicture: string;
+  userId : number;
+  private lastName : string;
+  private firstName: string;
+  private email : string;
+  private password: string;
+  private phoneNr: string;
+  private profilePicture: string;
 
-  get userId(): number {
-    return this._userId;
+  get userId1(): number {
+    return this.userId;
   }
 
-  set userId(value: number) {
-    this._userId = value;
+  set userId1(value: number) {
+    this.userId = value;
   }
-  get lastName(): string {
-    return this._lastName;
-  }
-
-  set lastName(value: string) {
-    this._lastName = value;
+  get lastName1(): string {
+    return this.lastName;
   }
 
-  get firstname(): string {
-    return this._firstname;
+  set lastName1(value: string) {
+    this.lastName = value;
   }
 
-  set firstname(value: string) {
-    this._firstname = value;
+  get firstname1(): string {
+    return this.firstName;
   }
 
-  get email(): string {
-    return this._email;
+  set firstname1(value: string) {
+    this.firstName = value;
   }
 
-  set email(value: string) {
-    this._email = value;
+  get email1(): string {
+    return this.email;
   }
 
-  get password(): string {
-    return this._password;
+  set email1(value: string) {
+    this.email = value;
   }
 
-  set password(value: string) {
-    this._password = value;
+  get password1(): string {
+    return this.password;
   }
 
-  get phoneNr(): string {
-    return this._phoneNr;
+  set password1(value: string) {
+    this.password = value;
   }
 
-  set phoneNr(value: string) {
-    this._phoneNr = value;
+  get phoneNr1(): string {
+    return this.phoneNr;
   }
 
-  get profilePicture(): string {
-    return this._profilePicture;
+  set phoneNr1(value: string) {
+    this.phoneNr = value;
   }
 
-  set profilePicture(value: string) {
-    this._profilePicture = value;
+  get profilePicture1(): string {
+    return this.profilePicture;
+  }
+
+  set profilePicture1(value: string) {
+    this.profilePicture = value;
   }
 
   constructor(userId: number, lastName: string, firstname: string, email: string, password: string, phoneNr: string, profilePicture: string) {
-    this._userId = userId;
-    this._lastName = lastName;
-    this._firstname = firstname;
-    this._email = email;
-    this._password = password;
-    this._phoneNr = phoneNr;
-    this._profilePicture = profilePicture;
+    this.userId = userId;
+    this.lastName = lastName;
+    this.firstName = firstname;
+    this.email = email;
+    this.password = password;
+    this.phoneNr = phoneNr;
+    this.profilePicture = profilePicture;
   }
 }

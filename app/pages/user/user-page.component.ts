@@ -1,31 +1,37 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {User} from "./user";
+import {Global} from "../global";
+import {AuthService} from "../authService";
 
 @Component({
   selector: 'app-user',
-  // templateUrl: './user-page.component.html',
-  // styleUrls:['./user-page.component.scss']
   templateUrl: './user-profilePage.html',
   styleUrls:['./user-profilePage.css']
 })
-export class UserPageComponent implements AfterViewInit{
-
-  @Input() _title: string = "Insert user"
-  @Input() public _user: User = new User(0,"ln","fn","e","p","pn","pp");
-  //@Input() private _email: string = this._user.email;
+export class UserPageComponent implements OnInit{
 
 
-  // constructor(user: User) {
-  //   this._user = user;
-  // }
-
-  ngAfterViewInit(): void {
-
-    const email: HTMLElement | null = <HTMLElement>document.getElementById("email");
-    const phoneNr: HTMLElement | null = <HTMLElement>document.getElementById("phone");
-    const name: HTMLElement | null = <HTMLElement>document.getElementById("name");
-    email.innerHTML = this._user.email;
-    phoneNr.innerHTML = this._user.phoneNr;
-    name.innerHTML = this._user.firstname + " " +this._user.lastName;
+  constructor(private authService: AuthService) {
   }
+  activeUser = Global.activeUser; // Retrieve the active user from Global
+
+  // @ts-ignore
+  name: string = ""
+  // @ts-ignore
+  email: string = ""
+  ngOnInit(): void {
+    // Retrieve the active user from localStorage
+    const storedUser = localStorage.getItem('activeUser');
+    Global.activeUser = this.authService.activeUser;
+
+    if (storedUser) {
+      this.activeUser = JSON.parse(storedUser);
+      // @ts-ignore
+      this.name = this.activeUser.firstName + ' ' + this.activeUser.lastName;
+      // @ts-ignore
+      this.email = this.activeUser.email;
+    }
+  }
+
+
+
 }
